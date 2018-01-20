@@ -1,0 +1,35 @@
+Takahiro Shimokobe
+CPE 357
+1/17/2018
+
+Problem Statement:
+
+	Implement a featured reduced version of the Unix tr program, which "translates" characters based on a user-specified mapping. 
+
+Program Logic: 
+
+	For translation, if given two sets (two strings enclosed in double quotes), then it replaces each occurance of characters in SET1 with the corresponding position in SET2. 
+
+	If given too few sets(less than 2) or too many (more than 2), then write to stderror using fprintf. 
+
+	If SET1 > SET2, SET2 is extended so that the last character is repeated. 
+
+	If there are repeat characters in SET1, then the character is translated on its last occurance of in the set. 
+
+	For deletion, the first command line argument is -d. If mytr is given that set and a single switch, it copies the stdin to stdout while deleting characters that appear in the set. 
+
+Data Structures:
+
+	I will use an array of integers representing the mapping of characters as their integer values (ASCII values)
+
+Methods:
+
+	void delete(char *string);
+	void translate(char *input, char *output);
+
+Testing:
+	test large files, small files, and empty files. 
+	test with a file that does not end with new line
+
+	test too few, too many, and invalid command-line prompts. 
+	test invalid switches, and multiple switches. 
